@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invasion Risk Atlas</title>
+    <link rel="stylesheet" href="/css/potential.css">
+
+    <!--Bootstrap 5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+    <!--Menu-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+        <div class="container">
+
+            <a href="/index.html" class="navbar-brand"> <span class="text-warning">InvasionRisk</span>Atlas </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
+                aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarS">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="/index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/methods.html" class="nav-link">Methodology</a>
+                    </li>
+                    <li class="nav-item dropdown">
+
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Species index</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li>
+                                <a href="/introduced.html" class="dropdown-item">Introduced species</a>
+                            </li>
+                            <li>
+                                <a href="/potential.html" class="dropdown-item">Potential species</a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="/credits.html" class="nav-link">Credits</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!--Image-Title-->
+    <header class="header">
+        <div class="header-content container">
+            <div class="header-txt">
+                <h2>Potential species</h2>
+
+            </div>
+
+        </div>
+    </header>
+
+
+
+    <!--Gallery-->
+    <div class="container-fluid">
+        <div class="container-searcher">
+            <div class="search">
+                <h3>Species name</h3>
+                <input type="text" name="" id="find" placeholder="Search..." onkeyup="search()">
+            </div>
+
+            <div class="gallery min-vh-100">
+                <div class="container-lg">
+                    <div class="species-list row gy-4 row-cols-1 row-cols-sm-2 row-cols-md-3">
+                        <div class="species col">
+                            <h5><i>Aponogeton distachyos </i></h5>
+                            <img src="/img/Aponogeton_distachyos.jpg" class="gallery-item" alt="Aponogeton distachyos">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Azolla microphylla </i></h5>
+                            <img src="/img/Azolla_microphylla.jpg" class="gallery-item" alt="Azolla microphylla">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Cabomba caroliniana </i></h5>
+                            <img src="/img/Cabomba_caroliniana.jpg" class="gallery-item" alt="Cabomba caroliniana">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Callitriche deflexa </i></h5>
+                            <img src="/img/Callitriche_deflexa.jpg" class="gallery-item" alt="Callitriche deflexa">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Crassula helmsii </i></h5>
+                            <img src="/img/Crassula_helmsii.jpg" class="gallery-item" alt="Crassula helmsii">
+                            
+                        </div>
+
+                        <div class="species col">
+                            <h5><i>Eichhornia diversifolia </i></h5>
+                            <img src="/img/Eichhornia_diversifolia.jpg" class="gallery-item" alt="Eichhornia diversifolia">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Elodea callitrichoides </i></h5>
+                            <img src="/img/Elodea_callitrichoides.jpg" class="gallery-item" alt="Elodea callitrichoides">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Elodea nuttallii </i></h5>
+                            <img src="/img/Elodea_nuttallii.jpg" class="gallery-item" alt="Elodea nuttallii">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Gymnocoronis spilanthoides </i></h5>
+                            <img src="/img/Gymnocoronis_spilanthoides.jpg" class="gallery-item" alt="Gymnocoronis spilanthoides">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Halophila stipulacea </i></h5>
+                            <img src="/img/Halophila_stipulacea.jpg" class="gallery-item" alt="Halophila stipulacea">
+                            
+                        </div>
+
+                        <div class="species col">
+                            <h5><i>Heteranthera zosterifolia </i></h5>
+                            <img src="/img/Heteranthera_zosterifolia.jpg" class="gallery-item" alt="Heteranthera zosterifolia">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Hydrilla verticillata </i></h5>
+                            <img src="/img/Hydrilla_verticillata.jpg" class="gallery-item" alt="Hydrilla verticillata">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Hydrocotyle moschata </i></h5>
+                            <img src="/img/Hydrocotyle_moschata.jpg" class="gallery-item" alt="Hydrocotyle moschata">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Hydrocotyle sibthorpioides </i></h5>
+                            <img src="/img/Hydrocotyle_sibthorpioides.jpg" class="gallery-item" alt="Hydrocotyle sibthorpioides">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Hygrophila polysperma </i></h5>
+                            <img src="/img/Hygrophila_polysperma.jpg" class="gallery-item" alt="Hygrophila polysperma">
+                            
+                        </div>
+
+                        <div class="species col">
+                            <h5><i>Landoltia punctata </i></h5>
+                            <img src="/img/Landoltia_punctata.jpg" class="gallery-item" alt="Landoltia punctata">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Lemna perpusilla </i></h5>
+                            <img src="/img/Lemna_perpusilla.jpg" class="gallery-item" alt="Lemna perpusilla">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Lemna turionifera </i></h5>
+                            <img src="/img/Lemna_turionifera.jpg" class="gallery-item" alt="Lemna turionifera">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Ludwigia alternifolia </i></h5>
+                            <img src="/img/Ludwigia_alternifolia.jpg" class="gallery-item" alt="Ludwigia alternifolia">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Murdannia keisak </i></h5>
+                            <img src="/img/Murdannia_keisak.jpg" class="gallery-item" alt="Murdannia keisak">
+                            
+                        </div>
+
+                        <div class="species col">
+                            <h5><i>Myriophyllum verrucosum </i></h5>
+                            <img src="/img/Myriophyllum_verrucosum.jpg" class="gallery-item" alt="Myriophyllum verruscosum">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Najas guadalupensis </i></h5>
+                            <img src="/img/Najas_guadalupensis.jpg" class="gallery-item" alt="Najas guadalupensis">
+                            
+                        
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Nelumbo nucifera </i></h5>
+                            <img src="/img/Nelumbo_nucifera.jpg" class="gallery-item" alt="Nelumbo nucifera">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Nuphar advena </i></h5>
+                            <img src="/img/Nuphar_advena.jpg" class="gallery-item" alt="Nuphar advena">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Nymphaea lotus </i></h5>
+                            <img src="/img/Nymphaea_lotus.jpg" class="gallery-item" alt="Nymphaea lotus">
+                            
+                        </div>
+
+                        <div class="species col">
+                            <h5><i>Orontium aquaticum </i></h5>
+                            <img src="/img/Orontium_aquaticum.jpg" class="gallery-item" alt="Orontium aquaticum">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Ottelia alismoides </i></h5>
+                            <img src="/img/Ottelia_alismoides.jpg" class="gallery-item" alt="Ottelia alismoides">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Pontederia cordata </i></h5>
+                            <img src="/img/Pontederia_cordata.jpg" class="gallery-item" alt="Pontederia cordata">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Potamogeton epihydrus </i></h5>
+                            <img src="/img/Potamogeton_epihydrus.jpg" class="gallery-item" alt="Potamogeton epihydrus">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Rotala ramosior </i></h5>
+                            <img src="/img/Rotala_ramosior.jpg" class="gallery-item" alt="Rotala ramosior">
+                            
+                        </div>
+
+                        <div class="species col">
+                            <h5><i>Rotala rotundifolia </i></h5>
+                            <img src="/img/Rotala_rotundifolia.jpg" class="gallery-item" alt="Rotala rotundifolia">
+                            
+                        </div>
+        
+                        <div class="species col">
+                            <h5><i>Sagittaria graminea </i></h5>
+                            <img src="/img/Sagittaria_graminea.jpg" class="gallery-item" alt="Sagittaria graminea">
+                            
+                        </div>
+
+                        <div class="species col">
+                            <h5><i>Sagittaria platyphylla </i></h5>
+                            <img src="/img/Sagittaria_platyphylla.jpg" class="gallery-item" alt="Sagittaria platyphylla">
+                            
+                        </div>
+
+                        <div class="species col">
+                            <h5><i>Sagittaria rigida </i></h5>
+                            <img src="/img/Sagittaria_rigida.jpg" class="gallery-item" alt="Sagittaria rigida">
+                            
+                        </div>
+
+                        <div class="species col">
+                            <h5><i>Salvinia auriculata </i></h5>
+                            <img src="/img/Salvinia_auriculata.jpg" class="gallery-item" alt="Salvinia auriculata">
+                            
+                        </div>
+
+                        <div class="species col">
+                            <h5><i>Salvinia minima </i></h5>
+                            <img src="/img/Salvinia_minima.jpg" class="gallery-item" alt="Salvinia minima">
+                            
+                        </div>
+
+                        <div class="species col">
+                            <h5><i>Saururus cernuus </i></h5>
+                            <img src="/img/Saururus_cernuus.jpg" class="gallery-item" alt="Saururus cernuus">
+                            
+                        </div>
+
+                        <div class="species col">
+                            <h5><i>Spartina anglica </i></h5>
+                            <img src="/img/Spartina_anglica.jpg" class="gallery-item" alt="Spartina anglica">
+                            
+                        </div>
+
+                        <div class="species col">
+                            <h5><i>Vallisneria nana </i></h5>
+                            <img src="/img/Vallisneria_nana.jpg" class="gallery-item" alt="Vallisneria nana">
+                            
+                        </div>
+
+                        <div class="species col">
+                            <h5><i>Zostera japonica </i></h5>
+                            <img src="/img/Zostera_japonica.jpg" class="gallery-item" alt="Zostera japonica">
+                            
+                        </div>
+        
+                    </div>
+        
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    
+    <!-- Modal -->
+    <div class="modal fade" id="gallery-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="/img/Aponogeton_distachyos.jpg" class="modal-img" alt="modal img">
+            </div>
+        </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!--Footer-->
+
+    <footer class="footer text-center py-3">
+        Creative Commons Attribution-NonComercial 4.0 International <a href="https://creativecommons.org/licenses/by-nc/4.0/" class="text-warning" target="_blank">(CC BY-NC 4.0)</a>
+
+    </footer>
+    
+
+    
+    
+
+    <script src="/js/modal.js"></script>
+    <script src="/js/search.js"></script>
+
+    <!--Bootstrap 5-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

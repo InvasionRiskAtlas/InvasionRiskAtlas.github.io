@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invasion Risk Atlas</title>
+    <link rel="stylesheet" href="/css/methods.css">
+
+    <!--Bootstrap 5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp" crossorigin="anonymous">
+
+
+</head>
+
+<body>
+
+    <!--Menu-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+
+        <div class="container">
+
+            <a href="/index.html" class="navbar-brand"> <span class="text-warning">InvasionRisk</span>Atlas </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarS"
+                aria-controls="navbarS" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarS">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a href="/index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/methods.html" class="nav-link">Methodology</a>
+                    </li>
+                    <li class="nav-item dropdown">
+
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Species index</a>
+                        <ul class="dropdown-menu dropdown-menu-dark">
+                            <li>
+                                <a href="/introduced.html" class="dropdown-item">Introduced species</a>
+                            </li>
+                            <li>
+                                <a href="/potential.html" class="dropdown-item">Potential species</a>
+                            </li>
+
+                        </ul>
+
+                    </li>
+                    <li class="nav-item">
+                        <a href="/credits.html" class="nav-link">Credits</a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!--Image-Title-->
+    <header class="header">
+        <div class="header-content container">
+            <div class="header-txt">
+                <h2>Methodology</h2>
+
+            </div>
+
+        </div>
+    </header>
+
+
+
+
+    <!--Section-->
+    <section class="about section-padding">
+        <div class="container">
+            <div class="about-text">
+                <h2>Species lists</h2><br>
+                <p>
+                    To select the alien aquatic plants used in the atlas, the list in Oficialdegui et al. (2023) was
+                    used as a starting point. The species set was then fleshed out employing the technical reports of
+                    the <a href="https://lifeinvasaqua.com/" target="_blank">LIFE INVASAQUA project</a> (Aquatic
+                    Invasive Alien Species of Freshwater and Estuarine Systems:
+                    Awareness and Prevention in the Iberian Peninsula) (LIFE17 GIE/ES/000515) (Oliva-Paterna et al. 2020
+                    a, b; 2022).
+                </p>
+                <p>
+                    The alien species selected were divided into two groups: one included introduced and established
+                    species (Introduced species) and the other comprised species that are not yet present but that are
+                    highly likely to
+                    invade (Potential species).
+                </p>
+                <p>
+                    For the species distribution models, global species occurrence data were obtained from <a
+                        href="https://www.gbif.org/" target="_blank">GBIF</a> and
+                    <a href="https://easin.jrc.ec.europa.eu/easin/" target="_blank">EASIN</a>. These data were cleaned
+                    up by removing erroneous taxonomic occurrences, duplicates, geographic outliers and spatial
+                    autocorrelation was reduced to minimize problems with model overfitting (Rodríguez-Merino et al.
+                    2018).
+                </p><br>
+
+                <img src="/img_2/occurrences.jpg" class="img-thumbnail mx-auto d-block" alt="occurrences_image">
+                <p class="legend">Figure 1. Example of observed species occurrence data</p>
+
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="about section-padding">
+        <div class="container">
+            <div class="about-text">
+                <h2>Variable selection</h2><br>
+                <p>
+                    The models' predictor variables were taken from <a href="https://www.worldclim.org/"
+                        target="_blank">WorldClim</a> (i.e., climatic conditions and altitude)
+                    and <a href="https://sedac.ciesin.columbia.edu/" target="_blank">SEDAC</a> (i.e., anthropogenic
+                    effects on the regional environment).
+                </p>
+                <p>
+                    To reduce collinearity within the models, a correlation analysis was performed to select a subset of
+                    variables. Variables were chosen based on their biological significance, which meant focusing on
+                    climatic variables associated with biological extremes, variables capable of inducing physiological
+                    stress in plants, and variables that limit species development and survival (Rodríguez-Merino et al.
+                    2017).
+                </p>
+                <p>
+                    The variables that remained in the model were maximum temperature of warmest month (Bio5), minimum
+                    temperature of coldest month (Bio6), precipitation seasonality (coefficient of variation, Bio15),
+                    precipitation of driest quarter (Bio17), human footprint and altitude.
+                </p><br>
+
+                <img src="/img_2/variables.jpg" class="img-thumbnail mx-auto d-block" alt="variables_image">
+                <p class="legend">Figure 2. Example of predictor variables maps</p>
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about section-padding">
+        <div class="container">
+            <div class="about-text">
+                <h2>Model application</h2><br>
+                <p>
+                    The species distribution models were built using the maximum entropy algorithm implemented in <a
+                        href="https://biodiversityinformatics.amnh.org/open_source/maxent/" target="_blank">MaxEnt</a>
+                    software (Phillips et al. 2006, Elith et al. 2011). It is currently considered to be one of the most
+                    common and robust methods for modeling potential species distributions. Indeed, it is helpful for
+                    modeling the distributions of rare and poorly studied species because it performs well with small
+                    sample sizes and needs no more than occurrence data to function (Elith et al. 2011). It has also
+                    been used to predict the potential distributions of alien aquatic plants
+                    (Rodríguez-Merino et al. 2017, 2018). MaxEnt models options and settings were selected following
+                    Rodríguez-Merino et al. (2019a).
+                </p><br>
+
+                <img src="/img_2/sdm.jpg" class="img-thumbnail mx-auto d-block" alt="sdm_image">
+                <p class="legend">Figure 3. Example of species distribution model</p>
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about section-padding">
+        <div class="container">
+            <div class="about-text">
+                <h2>Model accuracy</h2><br>
+                <p>
+                    The models were run using information on the species' occurrences in native and non-native ranges
+                    (Rodríguez-Merino et al. 2019b). In this process, 80% of the observed species distribution data were
+                    utilized for model calibration, and the remaining 20% were employed in model validation. Models were
+                    evaluated using the area under the receiver operating characteristic (ROC) curve.
+                </p><br>
+
+                <img src="/img_2/auc.png" class="img-thumbnail mx-auto d-block" alt="auc_image">
+                <p class="legend">Figure 4. Example of AUC graph</p>
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about section-padding">
+        <div class="container">
+            <div class="about-text">
+                <h2>Habitat suitability maps</h2><br>
+                <p>
+                    <a href="https://qgis.org/en/site/" target="_blank">QGIS</a> software was used to represent the
+                    spatial information obtained from the species distribution
+                    models. Habitat suitability ranged from low to high for each species.
+                </p><br>
+
+                <img src="/img_2/map.jpg" class="img-thumbnail mx-auto d-block" alt="map_image">
+                <p class="legend">Figure 5. Example of habitat suitability map (Invasion risk map)</p>
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+    <section class="about section-padding">
+        <div class="container">
+            <div class="about-text">
+
+                <h3>References</h3><br>
+                <p class="ref">
+                    Elith, J., Phillips, S. J., Hastie, T., Dudík, M., Chee, Y. E., & Yates, C. J. (2011). A statistical
+                    explanation of MaxEnt for ecologists. Diversity and distributions, 17(1), 43-57.
+                </p>
+                <p class="ref">
+                    Oficialdegui, F. J., Zamora-Marín, J. M., Guareschi, S., Anastácio, P. M., García-Murillo, P.,
+                    Ribeiro, F., ... & Oliva-Paterna, F. J. (2023). A horizon scan exercise for aquatic invasive alien
+                    species in Iberian inland waters. Science of the Total Environment, 869, 161798.
+                </p>
+                <p class="ref">
+                    Oliva-Paterna, F. J., Ribeiro, F., Miranda, R., Anastácio, P., García-Murillo, P., Cobo, F., ... &
+                    Zamora-Marín, J. M. (2021). LIST OF AQUATIC ALIEN SPECIES OF THE IBERIAN PENINSULA (2020). Updated
+                    list of aquatic alien species introduced and established in iberian inland waters.
+                </p>
+                <p class="ref">
+                    Oliva-Paterna, F. J., Ribeiro, F., Miranda, R., Anastácio, P., García-Murillo, P., Cobo, F., ... &
+                    Zamora-Marín, J. M. (2021). LIST OF POTENTIAL AQUATIC ALIEN SPECIES OF THE IBERIAN PENINSULA (2020).
+                    Updated list of the potential aquatic alien species with high risk of invasion in Iberian inland
+                    waters.
+                </p>
+                <p class="ref">
+                    Oliva-Paterna, F. J., Oficialdegui, F. J., Anastácio, P., García-Murillo, P., Zamora-Marín, J. M.,
+                    Ribeiro, F., ... & Vieira-Lanero, R. (2022). BLACK LIST AND ALERT LIST OF THE AQUATIC INVASIVE ALIEN
+                    SPECIES OF THE IBERIAN PENINSULA–Horizon scanning exercise focused on the high-risk aquatic invasive
+                    alien species for the Iberian inland waters.
+                </p>
+                <p class="ref">
+                    Phillips, S. J., Anderson, R. P., & Schapire, R. E. (2006). Maximum entropy modeling of species
+                    geographic distributions. Ecological modelling, 190(3-4), 231-259.
+                </p>
+                <p class="ref">
+                    Rodríguez Merino, A., Fernández Zamudio, R., & García Murillo, P. (2017). An invasion risk map for
+                    non-native aquatic macrophytes of the Iberian Peninsula. Anales del Jardín Botánico de Madrid, 74
+                    (1), e055.
+                </p>
+                <p class="ref">
+                    Rodríguez Merino, A., Fernández Zamudio, R., & García Murillo, P. (2019a). Identifying areas of
+                    aquatic plant richness in a Mediterranean hotspot to improve the conservation of freshwater
+                    ecosystems. Aquatic Conservation: Marine and Freshwater Ecosystems, 29(4), 589–602.
+                </p>
+                <p class="ref">
+                    Rodríguez-Merino, A., Fernández-Zamudio, R., García-Murillo, P., & Muñoz, J. (2019b). Climatic niche
+                    shift during <i>Azolla filiculoides</i> invasion and its potential distribution under future
+                    scenarios.
+                    Plants, 8(10), 424.
+                </p>
+                <p class="ref">
+                    Rodriguez-Merino, A., Garcia-Murillo, P., Cirujano, S., & Fernández-Zamudio, R. (2018). Predicting
+                    the risk of aquatic plant invasions in Europe: How climatic factors and anthropogenic activity
+                    influence potential species distributions. Journal for Nature Conservation, 45, 58-71.
+                </p>
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!--Footer-->
+
+    <footer class="footer text-center py-3">
+        Creative Commons Attribution-NonComercial 4.0 International <a
+            href="https://creativecommons.org/licenses/by-nc/4.0/" class="text-warning" target="_blank">(CC BY-NC
+            4.0)</a>
+
+    </footer>
+
+
+
+
+
+
+    <!--Bootstrap 5-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,107 @@
+/*google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+
+
+/* Header */
+
+.header {
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.4),
+        rgba(0, 0, 0, 0.4)),
+        url(/img_2/potential.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+}
+
+
+.header-content {
+    display: flex;
+    align-items: center;
+}
+
+
+.header-txt {
+    width: fit-content;
+    margin-top: 400px;
+}
+
+
+.header-txt h2 {
+    font-size: 60px;
+    line-height: 80px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-family: 'Fredericka the Great', cursive;
+}
+
+
+
+/* Searcher bar */
+
+.search {
+    /*width: 100vw;*/
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /*margin-left: 100px;*/
+
+}
+
+
+.search input {
+    width: 50%;
+    border: 1px solid black;
+    padding: 7px;
+    text-align: left;
+    
+}
+
+
+/* Maps gallery */
+
+.gallery {
+    background-color:#FFFFFF;
+    padding: 80px 0;
+}
+
+
+.gallery img{
+    background-color: #000000;
+    padding: 1px;
+    width: 100%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.modal-body img {
+    max-width: 100%;
+}
+
+
+.species img {
+    filter: grayscale(100%);
+}
+
+.species:hover img {
+    transform: scale(1.01);
+    filter: grayscale(0%);
+}
+
+.species h5 {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.footer {
+    background-color: #212529;
+    color: #FFFFFF;
+}
